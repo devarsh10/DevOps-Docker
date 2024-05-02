@@ -1,0 +1,16 @@
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.iconstyle{
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+
+.bgcolor{
+  min-height: 100vh;
+  background: #ECEFF1;
+  background: linear-gradient(150deg, rgb(224,224,224)0%, rrgb(223,237,254)100%); 
+}
+

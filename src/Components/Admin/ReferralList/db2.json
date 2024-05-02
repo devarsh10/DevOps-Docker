@@ -1,0 +1,179 @@
+{
+  "referrals": [
+    {
+      "id": "1",
+      "email": "jethalal@gokuldham.com",
+      "rfname": "Jethalal",
+      "status": "Completed",
+      "agentid": "2"
+    },
+    {
+      "id": "2",
+      "email": "atmaram@gokuldham.com",
+      "rfname": "Bhide",
+      "status": "In Progress",
+      "agentid": "3"
+    },
+    {
+      "id": "3",
+      "email": "sodhi@gokuldham.com",
+      "rfname": "Roshan Singh",
+      "status": "In Progress",
+      "agentid": "4"
+    },
+    {
+      "id": "4",
+      "email": "mehtus@gokuldham.com",
+      "rfname": "Taarak",
+      "status": "Completed",
+      "agentid": "5"
+    },
+    {
+      "id": "5",
+      "email": "pandey@gokuldham.com",
+      "rfname": "Popatlal",
+      "status": "Rejected",
+      "agentid": "2"
+    },
+    {
+      "id": "6",
+      "email": "idli@gokuldham.com",
+      "rfname": "Iyer",
+      "status": "In Progress",
+      "agentid": "3"
+    },
+    {
+      "id": "7",
+      "email": "hansraaj@gokuldham.com",
+      "rfname": "Hathi",
+      "status": "In Progress",
+      "agentid": "4"
+    },
+    {
+      "id": "8",
+      "email": "champak@gokuldham.com",
+      "rfname": "Champaklal",
+      "status": "In Progress",
+      "agentid": "5"
+    },
+    {
+      "id": "9",
+      "email": "jayantilal@gokuldham.com",
+      "rfname": "Jayantilal",
+      "status": "In Progress",
+      "agentid": "2"
+    },
+    {
+      "id": "10",
+      "email": "mohanlal@gokuldham.com",
+      "rfname": "Mohonlal",
+      "status": "In Progress",
+      "agentid": "3"
+    },
+    {
+      "id": "11",
+      "email": "jethalal@gokuldham.com",
+      "rfname": "Jethalal",
+      "status": "In Progress",
+      "agentid": "4"
+    },
+    {
+      "id": "12",
+      "email": "atmaram@gokuldham.com",
+      "rfname": "Bhide",
+      "status": "In Progress",
+      "agentid": "5"
+    },
+    {
+      "id": "13",
+      "email": "sodhi@gokuldham.com",
+      "rfname": "Roshan Singh",
+      "status": "In Progress",
+      "agentid": "2"
+    },
+    {
+      "id": "14",
+      "email": "mehtus@gokuldham.com",
+      "rfname": "Taarak",
+      "status": "In Progress",
+      "agentid": "3"
+    },
+    {
+      "id": "15",
+      "email": "pandey@gokuldham.com",
+      "rfname": "Popatlal",
+      "status": "In Progress",
+      "agentid": "4"
+    },
+    {
+      "id": "16",
+      "email": "idli@gokuldham.com",
+      "rfname": "Iyer",
+      "status": "Rejected",
+      "agentid": "5"
+    },
+    {
+      "id": "17",
+      "email": "hansraaj@gokuldham.com",
+      "rfname": "Hathi",
+      "status": "In Progress",
+      "agentid": "2"
+    },
+    {
+      "id": "18",
+      "email": "champak@gokuldham.com",
+      "rfname": "Champaklal",
+      "status": "New",
+      "agentid": "4"
+    },
+    {
+      "id": "19",
+      "email": "jayantilal@gokuldham.com",
+      "rfname": "Jayantilal",
+      "status": "Rejected",
+      "agentid": "4"
+    },
+    {
+      "id": "20",
+      "email": "mohanlal@gokuldham.com",
+      "rfname": "Mohonlal",
+      "status": "In Progress",
+      "agentid": "1"
+    },
+    {
+      "id": "21",
+      "email": "pandey@gokuldham.com",
+      "rfname": "Popatlal",
+      "status": "Rejected",
+      "agentid": "5"
+    },
+    {
+      "id": "22",
+      "email": "idli@gokuldham.com",
+      "rfname": "Iyer",
+      "status": "In Progress",
+      "agentid": "5"
+    },
+    {
+      "id": "23",
+      "email": "hansraaj@gokuldham.com",
+      "rfname": "Hathi",
+      "status": "New",
+      "agentid": "5"
+    },
+    {
+      "id": "24",
+      "email": "champak@gokuldham.com",
+      "rfname": "Champaklal",
+      "status": "New",
+      "agentid": "5"
+    },
+    {
+      "id": "25",
+      "email": "jayantilal@gokuldham.com",
+      "rfname": "Jayantilal",
+      "status": "New",
+      "agentid": "5"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Use the official Node.js image as a base
+FROM node:slim
+
+# Set a working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+# COPY package.json .
+
+# Install json-server
+RUN npm install -g json-server
+
+# Copy your JSON files to the working directory
+COPY ./src/db.json .
+COPY ./src/Components/Admin/ReferralList/db2.json .
+COPY ./src/Components/Agent/Dashboard_Com/Product/db3.json .
+RUN ls
+
+# Expose the ports for each json-server instance
+EXPOSE 8000
+EXPOSE 8001
+EXPOSE 8002
+
+# Command to run each json-server instance when the container starts
+
+CMD json-server --watch db.json --port 8000 --host 0.0.0.0 & json-server --watch db2.json --port 8001 --host 0.0.0.0 & json-server --watch db3.json --port 8002 --host 0.0.0.0

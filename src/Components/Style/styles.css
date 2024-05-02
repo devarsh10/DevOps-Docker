@@ -1,0 +1,56 @@
+.table-container {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .table-heading {
+    padding: 20px 0;
+  }
+  
+  .action-select {
+    min-width: 120px;
+  }
+  
+  .zindex-dropdown {
+    z-index: 1000;
+  }
+
+  .status-registered {
+    background-color: #4caf50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
+  .status-active {
+    background-color: #4caf50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
+  .status-deactive {
+    background-color: #f44336;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .status-inactive {
+    background-color: #f44336;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
+  .status-declined {
+    background-color: #f44336;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+  }
