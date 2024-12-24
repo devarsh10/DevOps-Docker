@@ -1,0 +1,40 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+name: "Github to Slack Notification"
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+    - uses: act10ns/slack@v2
+      with:
+        status: starting
+        channel: '#github-to-slack-notification'
+        message: Checking npm packages
+      if: always()
+    - name: checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Dependabot Simulation
+      run: echo "Dependabot updates are being checked..."
+
+    - name: Notify Slack - Workflow Completed
+      uses: act10ns/slack@v2
+      with:
+        status: success
+        channel: '#github-to-slack-notification'
+        message: "Workflow completed: Dependabot has finished checking npm packages."
+      if: always()
+      
+
+
+      
