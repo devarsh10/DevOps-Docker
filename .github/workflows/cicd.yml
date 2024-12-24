@@ -26,18 +26,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Check for outdated packages and capture output
+      # Check for outdated packages and save output
       - name: Check Outdated Packages
         id: outdated-packages
         run: |
-          npm outdated > outdated_packages.txt || echo "No outdated packages found" > outdated_packages.txt.
-          echo "outdated_packages=$OUTPUT" >> $GITHUB_ENV
-        # Save the result as an output variable
-        shell: bash
-        env:
-          OUTPUT_FILE: outdated_packages.txt
-          
-      # Notify Slack with outdated packages
+          npm outdated || echo "No outdated packages found" > outdated_packages.txt
+          cat outdated_packages.txt
+        continue-on-error: true
+
+      # Read the output and send it to Slack
       - name: Notify Slack - Outdated Packages
         uses: act10ns/slack@v2
         with:
@@ -45,5 +42,5 @@ jobs:
           channel: '#github-to-slack-notification'
           message: |
             Following outdated packages found:
-            ${{ env.outdated_packages }}
+            ```$(cat outdated_packages.txt)```
         if: always()
