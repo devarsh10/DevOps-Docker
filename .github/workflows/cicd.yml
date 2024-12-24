@@ -24,15 +24,19 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Dependabot Simulation
-      run: echo "Dependabot updates are being checked..."
+    - name: Check outdated Package
+      id: outdated-packages
+      run: |
+        npm outdated || echo "No outdated packages found"
 
-    - name: Notify Slack - Workflow Completed
+    - name: Notify Slack - Outdated Packages
       uses: act10ns/slack@v2
       with:
         status: success
         channel: '#github-to-slack-notification'
-        message: "Workflow completed: Dependabot has finished checking npm packages."
+        message: |
+          Following outdated packages found
+          ${{ steps.outdated-packages.outputs.result }}
       if: always()
       
 
