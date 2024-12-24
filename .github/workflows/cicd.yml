@@ -30,14 +30,13 @@ jobs:
       - name: Check Outdated Packages
         id: outdated-packages
         run: |
-          npm outdated > outdated_packages.txt || echo "No outdated packages found" > outdated_packages.txt
+          npm outdated > outdated_packages.txt || echo "No outdated packages found" > outdated_packages.txt.
+          echo "outdated_packages=$OUTPUT" >> $GITHUB_ENV
         # Save the result as an output variable
         shell: bash
         env:
           OUTPUT_FILE: outdated_packages.txt
-        run: |
-          echo "outdated_packages=$(cat $OUTPUT_FILE)" >> $GITHUB_ENV
-
+          
       # Notify Slack with outdated packages
       - name: Notify Slack - Outdated Packages
         uses: act10ns/slack@v2
