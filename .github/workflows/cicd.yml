@@ -1,44 +1,50 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 name: "Github to Slack Notification"
+
 on:
   push:
     branches: [ "main" ]
+
 jobs:
   job1:
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
-    - uses: act10ns/slack@v2
-      with:
-        status: starting
-        channel: '#github-to-slack-notification'
-        message: Checking npm packages
-      if: always()
-    - name: checkout code
-      uses: actions/checkout@v3
+      # Notify Slack when the workflow starts
+      - uses: act10ns/slack@v2
+        with:
+          status: starting
+          channel: '#github-to-slack-notification'
+          message: "Checking npm packages"
+        if: always()
 
-    - name: Install Dependencies
-      run: npm install
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Check outdated Package
-      id: outdated-packages
-      run: |
-        npm outdated || echo "No outdated packages found"
+      # Install npm dependencies
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Notify Slack - Outdated Packages
-      uses: act10ns/slack@v2
-      with:
-        status: success
-        channel: '#github-to-slack-notification'
-        message: |
-          Following outdated packages found
-          ${{ steps.outdated-packages.outputs.result }}
-      if: always()
-      
+      # Check for outdated packages and capture output
+      - name: Check Outdated Packages
+        id: outdated-packages
+        run: |
+          npm outdated > outdated_packages.txt || echo "No outdated packages found" > outdated_packages.txt
+        # Save the result as an output variable
+        shell: bash
+        env:
+          OUTPUT_FILE: outdated_packages.txt
+        run: |
+          echo "outdated_packages=$(cat $OUTPUT_FILE)" >> $GITHUB_ENV
 
-
-      
+      # Notify Slack with outdated packages
+      - name: Notify Slack - Outdated Packages
+        uses: act10ns/slack@v2
+        with:
+          status: success
+          channel: '#github-to-slack-notification'
+          message: |
+            Following outdated packages found:
+            ${{ env.outdated_packages }}
+        if: always()
